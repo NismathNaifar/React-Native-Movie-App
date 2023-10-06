@@ -31,17 +31,24 @@ const SearchScreen = (props) => {
     }
 
     const displayResult = () => {
-        if(result) {
-            return (
-                <MovieList data={result} showMovie={showMovie} />
-            )
+        if (result !== null) {
+            if (result.length === 0) {
+                return (
+                    <Box paddingY={40} alignItems='center'>
+                        <Heading>No matching results found.</Heading>
+                    </Box>
+                );
+            } else {
+                return (
+                    <MovieList data={result} showMovie={showMovie} />
+                );
+            }
         }
-
-        return(
+        return (
             <Box paddingY={40} alignItems='center'>
                 <Heading>Please initiate a search</Heading>
             </Box>
-        )
+        );
     }
 
     return (

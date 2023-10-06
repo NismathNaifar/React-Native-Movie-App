@@ -31,10 +31,6 @@ const MovieContainer = props => {
         navigation.navigate("ShowMovie", { id, media_type})
     }
 
-    const showAllMovies = (id, media_type) => {
-        navigation.navigate("ShowAll", { movies: allMovies })
-    }
-
     useEffect(() => {
         setMovies(null);
         getMovies()
@@ -60,9 +56,6 @@ const MovieContainer = props => {
 
     return (
         <>
-            <Text mb={1}>Showing 10 results</Text>
-            <Button onPress={showAllMovies}>View all</Button>
-
             <VStack alignItems="center" paddingY={10} mb={100} space={10}>
                 <Box width={150}>
                     <Select 
@@ -86,3 +79,4 @@ const MovieContainer = props => {
 }
 
 export default MovieContainer;
+
